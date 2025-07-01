@@ -878,340 +878,451 @@ section .headline
 
 }
 
-#slider{
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+   height: -4000px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 20px 0;
+    
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #000, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Gallery Section */
+.gallery-section {
     position: relative;
-    width: 63%;
-    height: 42vw;
-    margin: 80px auto;
-    transform-style: preserve-3d;
-    font-family: "helvertica neue", sans-serif;
-    perspective: 1400px;
-
+    background: rgba(13, 34, 223, 0.692);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-input[type="radio"] {
+.gallery-container {
     position: relative;
-    top: 108%;
-    left: 50%;
-    width: 18px;
-    height: 18px;
-    margin: 0 15px 0 0;
-    transform: translateX(-83px);
-    cursor: pointer;
-    opacity: 0.4;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-input[type="radio"]:nth-child(5){
-    margin-right: 0px;
+.gallery-wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
 }
 
-input[type="radio"]:checked{
-    opacity: 1;
-}
-
-#slider label,
-#slider label img{
+.gallery-track {
     display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.gallery-item {
+    flex: 0 0 100%;
+    position: relative;
+    aspect-ratio: 16/10;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(17, 8, 8, 0.8));
+    padding: 40px 30px 30px;
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+    text-shadow: 0 2px 10px rgba(202, 202, 202, 0);
+}
+
+/* Gallery Controls */
+.gallery-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    color: white;
+    margin: 0 20px;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+/* Gallery Indicators */
+.gallery-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Action Container */
+.action-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.learn-more-btn {
+    position: relative;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 50px;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.learn-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.6);
+}
+
+.learn-more-btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
-    border-radius: 3px;
-    color: white;
-    font-size: 70px;
-    font-weight: bold;
-    transition: transform 400ms ease
-    ;
-
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
 }
 
-/* Default 3D arrangement when no radio button is checked */
-#slide1 {
-    transform: translate3d(-40%, 0, -250px);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+.learn-more-btn:hover .btn-glow {
+    left: 100%;
 }
 
-#slide2 {
-    transform: translate3d(-20%, 0, -100px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-#slide3 {
-    transform: translate3d(0%, 0, 0px);
-    box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0,0,0, 0.2);
-}
-
-#slide4 {
-    transform: translate3d(20%, 0, -100px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-#slide5 {
-    transform: translate3d(40%, 0, -250px);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-
-#slide6 {
-    transform: translate3d(40%, 0, -250px);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-
-#s1:checked ~ #slide1,
-#s2:checked ~ #slide2,
-#s3:checked ~ #slide3,
-#s4:checked ~ #slide4,
-#s5:checked ~ #slide5{
-
-    transform: translate3d(0%, 0, 0px);
-   box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3),
-    0 12px 6px rgba(0,0,0, 0.2);
-}
-
-#s1:checked ~ #slide2,
-#s2:checked ~ #slide3,
-#s3:checked ~ #slide4,
-#s4:checked ~ #slide5,
-#s5:checked ~ #slide1 {
-
-    transform: translate3d(20%, 0, -100px);
-    box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px
-    rgba(0, 0, 0, 0.2);
-}
-
-
-
-#s1:checked ~ #slide5,
-#s2:checked ~ #slide1,
-#s3:checked ~ #slide2,
-#s4:checked ~ #slide3,
-#s5:checked ~ #slide4 {
-
-    transform: translate3d(-20%, 0, -100px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px
-    rgba(0, 0, 0, 0.2);
-}
-
-
-#s1:checked ~ #slide3,
-#s2:checked ~ #slide4,
-#s3:checked ~ #slide5,
-#s4:checked ~ #slide1,
-#s5:checked ~ #slide2 {
-
-    transform: translate3d(40%, 0, -250px);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-
-#s1:checked ~ #slide4,
-#s2:checked ~ #slide5,
-#s3:checked ~ #slide1,
-#s4:checked ~ #slide2,
-#s5:checked ~ #slide3 {
-
-    transform: translate3d(-40%, 0, -250px);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-/* --- Media Query for Mobile Devices --- */
-@media (max-width: 68px) {
-    #slider {
-        /* Adjust slider width or height if needed for mobile */
-        /* width: 95%; */
-        /* height: 65vw; */
-        margin: 40px auto; /* Reduce margin on mobile */
-        perspective: 1000px; /* Adjust perspective if needed */
-    }
-
-    /* Adjust default positions for mobile */
-     #slide1 {
-        transform: translate3d(-25%, 0, -150px); /* Reduced horizontal shift and z */
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    }
-
-    #slide2 {
-        transform: translate3d(-15%, 0, -50px); /* Reduced horizontal shift and z */
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
-    }
-
-    #slide3 {
-        transform: translate3d(0%, 0, 0px); /* Active remains centered */
-        box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0,0,0, 0.2);
-    }
-
-    #slide4 {
-        transform: translate3d(15%, 0, -50px); /* Reduced horizontal shift and z */
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
-    }
-
-    #slide5 {
-        transform: translate3d(25%, 0, -150px); /* Reduced horizontal shift and z */
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    }
-
-
-    /* Adjust positions when radio buttons are checked for mobile */
-    #s1:checked ~ #slide2,
-    #s2:checked ~ #slide3,
-    #s3:checked ~ #slide4,
-    #s4:checked ~ #slide5,
-    #s5:checked ~ #slide1 {
-        transform: translate3d(15%, 0, -50px); /* Reduced horizontal shift and z */
-        /* Keep box-shadow or adjust if needed */
-    }
-
-    #s1:checked ~ #slide5,
-    #s2:checked ~ #slide1,
-    #s3:checked ~ #slide2,
-    #s4:checked ~ #slide3,
-    #s5:checked ~ #slide4 {
-        transform: translate3d(-15%, 0, -50px); /* Reduced horizontal shift and z */
-        /* Keep box-shadow or adjust if needed */
-    }
-
-    #s1:checked ~ #slide3,
-    #s2:checked ~ #slide4,
-    #s3:checked ~ #slide5,
-    #s4:checked ~ #slide1,
-    #s5:checked ~ #slide2 {
-        transform: translate3d(25%, 0, -150px); /* Reduced horizontal shift and z */
-        /* Keep box-shadow or adjust if needed */
-    }
-
-    #s1:checked ~ #slide4,
-    #s2:checked ~ #slide5,
-    #s3:checked ~ #slide1,
-    #s4:checked ~ #slide2,
-    #s5:checked ~ #slide3 {
-        transform: translate3d(-25%, 0, -150px); /* Reduced horizontal shift and z */
-        /* Keep box-shadow or adjust if needed */
-    }
-
-    /* The active slide rule should remain the same for mobile */
-    #s1:checked ~ #slide1,
-    #s2:checked ~ #slide2,
-    #s3:checked ~ #slide3,
-    #s4:checked ~ #slide4,
-    #s5:checked ~ #slide5{
-        transform: translate3d(0%, 0, 0px);
-        /* Keep box-shadow or adjust if needed */
-    }
-}
-
-
-    /* Añade estas reglas al final de tu archivo main.css */
-    
-    
-    
-
-.slide-text {
-    position: absolute; /* Posiciona el texto sobre la imagen */
-    top: 85%; /* Mueve el texto al 50% desde arriba */
-    left: 50%; /* Mueve el texto al 50% desde la izquierda */
-    transform: translate(-50%, -50%); /* Centra el texto exactamente */
-    color: white; /* Color del texto (puedes ajustarlo) */
-    font-size: 20px; /* Tamaño de la letra (puedes ajustarlo) */
-    font-weight: bold; /* Opcional: hace la letra negrita */
-    text-align: center; /* Asegura que el texto dentro del div esté centrado */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Opcional: sombra para mejorar legibilidad */
-    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
-    pointer-events: none; /* Permite hacer clic en la imagen a través del texto */
-}
-
-
- 
-/* --- Styles for the single "Conocer más" button --- */
-#single-learn-more-btn {
-    display: block; /* Make it a block element to center easily */
-    margin: 20px auto; /* Add some margin and center it */
-    padding: 10px 20px;
-    background-color: #007bff; /* Example background color (blue) */
-    color: white; /* Text color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-#single-learn-more-btn:hover {
-    background-color: #0056b3; /* Darker color on hover */
-}
-
-
-/* --- Styles for the information overlay (the dark background) --- */
-.info-overlay {
-    position: fixed; /* Fixed position to cover the viewport */
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    z-index: 100; /* Ensure it's on top of everything */
-    visibility: hidden; /* Initially hidden */
-    opacity: 0; /* Start with opacity 0 for fade-in */
-    transition: opacity 0.4s ease, visibility 0.4s ease; /* Transition for fade-in */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
 }
 
-/* Style for the content box inside the overlay */
-.info-content {
-    background-color: white; /* Background of the info box */
-    padding: 30px;
-    border-radius: 8px;
-    max-width: 80%; /* Max width of the info box */
-    max-height: 80%; /* Max height */
-    overflow-y: auto; /* Add scroll if content is too long */
-    position: relative; /* Needed for close button positioning */
-    transform: translateY(20px); /* Start slightly below center for a subtle effect */
-    transition: transform 0.4s ease; /* Transition for the slide-up effect */
-}
-
-/* State when the overlay is active/visible (controlled by JavaScript) */
-.info-overlay.active {
-    visibility: visible;
+.modal-overlay.active {
     opacity: 1;
+    visibility: visible;
 }
 
-.info-overlay.active .info-content {
-    transform: translateY(0); /* Move to final centered position */
+.modal-content {
+    background: white;
+    border-radius: 25px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.8) translateY(50px);
+    transition: transform 0.4s ease;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
 }
 
-/* Style for the close button inside the info box */
-.close-info-btn {
+.modal-overlay.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.1);
     border: none;
-    font-size: 1.5em;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    color: #aaa; /* Color of the close button */
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
-.close-info-btn:hover {
-    color: #777; /* Darker color on hover */
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
 }
 
-/* Optional: Adjust styles for smaller screens */
+.modal-header {
+    position: relative;
+    text-align: center;
+}
+
+.modal-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 25px 25px 0 0;
+}
+
+.modal-title {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    text-align: left;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.modal-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .info-content {
-        max-width: 95%;
+    .container {
+        padding: 15px;
+    }
+    
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .gallery-section {
+        padding: 25px;
+        border-radius: 20px;
+    }
+    
+    .nav-btn {
+        width: 45px;
+        height: 45px;
+        margin: 0 15px;
+    }
+    
+    .learn-more-btn {
+        padding: 15px 35px;
+        font-size: 1rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .modal-body {
         padding: 20px;
     }
-
-    #single-learn-more-btn {
-        margin: 15px auto; /* Adjust margin on mobile */
-        padding: 8px 15px;
-        font-size: 0.9em;
+    
+    .modal-title {
+        font-size: 1.5rem;
+        left: 20px;
+        right: 20px;
     }
+    
+    .modal-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-section {
+        padding: 20px;
+    }
+    
+    .overlay h3 {
+        font-size: 1.2rem;
+    }
+    
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+    }
+}
+
+/* Smooth Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-section {
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Custom Scrollbar */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
 }
 
 
