@@ -331,112 +331,158 @@
         </section>
         <!-- /SERVICE -->
         
-        
-        
-        <!-- WORK -->
-        <section id="work" class="white">
-        
+        <section id="instituciones" class="white"> 
         
             <!-- CONTAINER FLUID -->
             <div class="container-fluid text-center">
+               <div class="container">
+        <header class="hero">
+            <h1 class="hero-title">Galería de Instituciones</h1>
+            <p class="hero-subtitle">Descubre las instituciones de El Morro de Puerto Santo</p>
+        </header>
 
-           <i> <h1 class="headline scroll-animated-from-bottom">INSTITUCIONES</h1></i>
-          
+        <section class="gallery-section">
+            <div class="gallery-container">
+                <div class="gallery-wrapper">
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-item" data-index="0">
+                            <img src="https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Harvard">
+                            <div class="overlay">
+                                <h3 style="color: white;">Universidad de Harvard</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="1">
+                            <img src="https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=500" alt="MIT">
+                            <div class="overlay">
+                                <h3 style="color: white;">Instituto de Tecnología de Massachusetts</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="2">
+                            <img src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Stanford">
+                            <div class="overlay">
+                                <h3 style="color: white;" >Universidad de Stanford</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="3">
+                            <img src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Oxford">
+                            <div class="overlay">
+                                <h3 style="color: white;">Universidad de Oxford</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="4">
+                            <img src="https://images.pexels.com/photos/159775/library-la-trobe-study-students-159775.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Cambridge">
+                            <div class="overlay">
+                                <h3 style="color: white;">Universidad de Cambridge</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="5">
+                            <img src="https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Yale">
+                            <div class="overlay">
+                                <h3 style="color: white;">Universidad de Yale</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="6">
+                            <img src="https://images.pexels.com/photos/1496192/pexels-photo-1496192.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Princeton">
+                            <div class="overlay">
+                                <h3 style="color: white;">Universidad de Princeton</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="7">
+                            <img src="https://images.pexels.com/photos/289740/pexels-photo-289740.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Columbia">
+                            <div class="overlay">
+                                <h3 style="color: white;">Universidad de Columbia</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="8">
+                            <img src="https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Chicago">
+                            <div class="overlay">
+                                <h3 style="color: white;">Universidad de Chicago</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="9">
+                            <img src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Universidad de Pennsylvania">
+                            <div class="overlay">
+                                <h3 style="color: white;">Universidad de Pennsylvania</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="10">
+                            <img src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Instituto Tecnológico de California">
+                            <div class="overlay">
+                                <h3 style="color: white;">Instituto Tecnológico de California</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="nav-btn prev-btn" id="prevBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="nav-btn next-btn" id="nextBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="gallery-indicators" id="galleryIndicators"></div>
+            </div>
+
+            <div class="action-container">
+                <button class="learn-more-btn" id="learnMoreBtn">
+                   <span class="btn-text" style="color: white;">Conocer Más</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="modal-header">
+                <img class="modal-image" id="modalImage" src="" alt="">
+                <h2 class="modal-title" id="modalTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description" id="modalDescription"></p>
+                <div class="modal-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Fundada</span>
+                        <span class="stat-value" id="modalFounded"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Estudiantes</span>
+                        <span class="stat-value" id="modalStudents"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Ranking</span>
+                        <span class="stat-value" id="modalRanking"></span>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-    <div id="slider">
-        <input type="radio" name="slider" id="s1" checkend/>
-        <input type="radio" name="slider" id="s2">
-        <input type="radio" name="slider" id="s3">
-        <input type="radio" name="slider" id="s4">
-        <input type="radio" name="slider" id="s5">
-
-
-        <label for="s1" id="slide1">
-            <img src="assets/img/work/Anexo Dr. Alberto Carnevalli.jpg" alt="" >
-            <div class="slide-text">"Instituciones Educativas" </div>
-        </label>
-        <label for="s2" id="slide2">
-            <img src="assets/img/work/Ambulatorio.jpg" alt="" >
-            <div class="slide-text">"Institución de Salud"</div> 
-        </label>
-        <label for="s3" id="slide3">
-            <img src="assets/img/work/ElTucan.jpg" alt="" > 
-            <div class="slide-text">"Institución Privada"</div>
-        </label>
-        <label for="s4" id="slide4">
-            <img src="assets/img/work/Prefectura El Morro.jpg" alt="" >
-            <div class="slide-text">"Seguridad Pública"</div>
-        </label>
-        <label for="s5" id="slide5">
-            <img src="assets/img/work/Insopesca.jpg" alt="" >
-            <div class="slide-text">"Ministerio de Pesca"</div>
-        </label>
-      
-    
-     </div>       
-              
-    
-<button id="single-learn-more-btn">Conocer más</button>
-
-<!-- Los contenedores de información ocultos -->
-<div class="info-overlay" id="info-slide1">
-    <div class="info-content">
-        <h2>Complejo Educativo "Leonor García".</h2>
-        <p>
-        El Anexo es una institución educativa ubicada en
-         el sector El Morro de Puerto Santo,
-        que ofrece educación básica a niños y jóvenes de la comunidad.
-         Con un enfoque en la formación integral,
-        el Anexo se esfuerza por brindar una educación de calidad 
-        que fomente el desarrollo académico, social y emocional de
-        sus estudiantes.
-        </p>
-        <button class="close-info-btn">Cerrar</button>
     </div>
-</div>
-
-<div class="info-overlay" id="info-slide2">
-    <div class="info-content">
-        <h2> Ambulatorio Francisco "Chico" Marcano.</h2>
-        <p>Aquí va la descripción detallada de la bebida.</p>
-        <button class="close-info-btn">Cerrar</button>
-    </div>
-</div>
-
-<!-- ... otros contenedores de información con IDs únicos (info-slide3, info-slide4, info-slide5) ... -->          
-     
-<div class="info-overlay" id="info-slide3">
-    <div class="info-content">
-        <h2>Frigorífico El Tucán</h2>
-        <p>Aquí va la descripción detallada de la bebida.</p>
-        <button class="close-info-btn">Cerrar</button>
-    </div>
-</div>
+          
+          
+        
     
-<div class="info-overlay" id="info-slide4">
-    <div class="info-content">
-        <h2>Prefuectura "El Morro"</h2>
-        <p>Aquí va la descripción detallada de la bebida.</p>
-        <button class="close-info-btn">Cerrar</button>
-    </div>
-</div>
-
-    
-    
-<div class="info-overlay" id="info-slide5">
-    <div class="info-content">
-        <h2>Insopesca</h2>
-        <p>Aquí va la descripción detallada de la bebida.</p>
-        <button class="close-info-btn">Cerrar</button>
-    </div>
-</div>
             </div>
             <!-- /CONTAINER FLUID -->
 
 
         </section>
-        <!-- /WORK -->
+        
+        
+        <!-- WORK -->
+       
         
         
         
